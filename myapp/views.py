@@ -9,7 +9,7 @@ from django.shortcuts import render
 
 def index(request):
     top_list = Topic.objects.all().order_by('id')[:10]
-    return render(request, 'myapp/index0.html', {'top_list': top_list})
+    return render(request, 'myapp/index.html', {'top_list': top_list})
 #  course_list = Course.objects.all().order_by('-price')[:5]
 
 #  response = HttpResponse()
@@ -39,7 +39,7 @@ def index(request):
 # # About view
 
 def about(request):
-    return render(request, 'myapp/about0.html')
+    return render(request, 'myapp/about.html')
 
   # ans 3,4: No need to use context variable because it is simple html text
 
@@ -53,7 +53,7 @@ def about(request):
 def details(request, id):
     topic = get_object_or_404(Topic, id=id)
     courses_list = Course.objects.filter(topic_id=topic.id)
-    return render(request, 'myapp/detail0.html', {'topic': topic, 'course_list': courses_list})
+    return render(request, 'myapp/detail.html', {'topic': topic, 'course_list': courses_list})
 
   # Yes, we have used context variable to pass the content of course list and topic in template
 
