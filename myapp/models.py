@@ -9,8 +9,8 @@ class Topic(models.Model):
  category = models.CharField(max_length=200, blank=True)
 
  def __str__(self):
-  return serializers.serialize('json', [self])
-  # return f"ID: {str(self.id)} Name: " + str(self.name) + "\n Category:" + str(self.category) + "\n"
+  # return serializers.serialize('json', [self])
+  return f"ID: {str(self.id)} Name: " + str(self.name) + "\n Category:" + str(self.category) + "\n"
 
  def get_category(self):
   return self.category
