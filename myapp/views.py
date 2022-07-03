@@ -41,7 +41,6 @@ def index(request):
 # # About view
 
 def about(request):
-    print("BONGO")
     return render(request, 'myapp/about0.html')
     # ans 3,4: No need to use context variable because it is simple html text
 
