@@ -37,11 +37,10 @@ def index(request):
     # return response
 
 
-
 # # About view
 
 def about(request):
-    return render(request, 'myapp/about0.html')
+    return render(request, 'myapp/about.html')
     # ans 3,4: No need to use context variable because it is simple html text
 
     # response = HttpResponse()
@@ -75,3 +74,8 @@ def details(request, id):
     # print(courses_list)
 
     # return response
+
+
+def courses(request):
+    courses_list = Course.objects.all().order_by("id")
+    return render(request, 'myapp/courses.html', {'courses': courses_list})

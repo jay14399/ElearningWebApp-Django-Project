@@ -26,10 +26,15 @@ class Course(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     for_everyone = models.BooleanField(default=True)
     description = models.TextField(max_length=300, null=True, blank=True)
+    interested = models.PositiveIntegerField(default=0)
+    stages = models.PositiveIntegerField(default=3)
 
     def __str__(self):
         return 'Topic=' + self.topic.name + ' Name=' + self.name + ' Price=' + str(self.price) + ' For everyone=' + str(
             self.for_everyone) + ' Description=' + self.description
+
+    def discount(self):
+        return self.price - (0.10 * self.price); 
 
 
 class Student(User):
