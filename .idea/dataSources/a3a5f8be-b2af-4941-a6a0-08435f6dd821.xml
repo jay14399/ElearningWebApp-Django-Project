@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="db">
-  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.32">
-    <root id="1">
-      <ServerVersion>3.36.0</ServerVersion>
-    </root>
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.39">
+    <root id="1"/>
     <collation id="2" parent="1" name="BINARY"/>
     <collation id="3" parent="1" name="NOCASE"/>
     <collation id="4" parent="1" name="RTRIM"/>
@@ -1307,10 +1305,10 @@
       <System>1</System>
     </table>
     <column id="491" parent="473" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="492" parent="473" name="name">
       <DataType>varchar(150)|0s</DataType>
@@ -1319,7 +1317,6 @@
     </column>
     <index id="493" parent="473" name="sqlite_autoindex_auth_group_1">
       <ColNames>name</ColNames>
-      <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
@@ -1332,10 +1329,10 @@
       <UnderlyingIndexName>sqlite_autoindex_auth_group_1</UnderlyingIndexName>
     </key>
     <column id="496" parent="474" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="497" parent="474" name="group_id">
       <DataType>integer|0s</DataType>
@@ -1364,27 +1361,23 @@
     <index id="501" parent="474" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
       <ColNames>group_id
 permission_id</ColNames>
-      <ColumnCollations>
-</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="502" parent="474" name="auth_group_permissions_group_id_b120cbf9">
       <ColNames>group_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="503" parent="474" name="auth_group_permissions_permission_id_84c5c92e">
       <ColNames>permission_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="504" parent="474">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="505" parent="475" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="506" parent="475" name="content_type_id">
       <DataType>integer|0s</DataType>
@@ -1411,23 +1404,20 @@ permission_id</ColNames>
     <index id="510" parent="475" name="auth_permission_content_type_id_codename_01ab375a_uniq">
       <ColNames>content_type_id
 codename</ColNames>
-      <ColumnCollations>
-</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="511" parent="475" name="auth_permission_content_type_id_2f476e4b">
       <ColNames>content_type_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="512" parent="475">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="513" parent="476" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="514" parent="476" name="password">
       <DataType>varchar(128)|0s</DataType>
@@ -1480,7 +1470,6 @@ codename</ColNames>
     </column>
     <index id="524" parent="476" name="sqlite_autoindex_auth_user_1">
       <ColNames>username</ColNames>
-      <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
@@ -1493,10 +1482,10 @@ codename</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_auth_user_1</UnderlyingIndexName>
     </key>
     <column id="527" parent="477" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="528" parent="477" name="user_id">
       <DataType>integer|0s</DataType>
@@ -1525,27 +1514,23 @@ codename</ColNames>
     <index id="532" parent="477" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
       <ColNames>user_id
 group_id</ColNames>
-      <ColumnCollations>
-</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="533" parent="477" name="auth_user_groups_user_id_6a12ed8b">
       <ColNames>user_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="534" parent="477" name="auth_user_groups_group_id_97559544">
       <ColNames>group_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="535" parent="477">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="536" parent="478" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="537" parent="478" name="user_id">
       <DataType>integer|0s</DataType>
@@ -1574,17 +1559,13 @@ group_id</ColNames>
     <index id="541" parent="478" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
       <ColNames>user_id
 permission_id</ColNames>
-      <ColumnCollations>
-</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="542" parent="478" name="auth_user_user_permissions_user_id_a95ead1b">
       <ColNames>user_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="543" parent="478" name="auth_user_user_permissions_permission_id_1fbb5f2c">
       <ColNames>permission_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="544" parent="478">
       <ColNames>id</ColNames>
@@ -1594,10 +1575,10 @@ permission_id</ColNames>
       <Predicate>&quot;action_flag&quot; &gt;= 0</Predicate>
     </check>
     <column id="546" parent="479" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="547" parent="479" name="action_time">
       <DataType>datetime|0s</DataType>
@@ -1648,21 +1629,19 @@ permission_id</ColNames>
     </foreign-key>
     <index id="556" parent="479" name="django_admin_log_content_type_id_c4bce8eb">
       <ColNames>content_type_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="557" parent="479" name="django_admin_log_user_id_c564eba6">
       <ColNames>user_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="558" parent="479">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="559" parent="480" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="560" parent="480" name="app_label">
       <DataType>varchar(100)|0s</DataType>
@@ -1677,8 +1656,6 @@ permission_id</ColNames>
     <index id="562" parent="480" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ColNames>app_label
 model</ColNames>
-      <ColumnCollations>
-</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="563" parent="480">
@@ -1686,10 +1663,10 @@ model</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="564" parent="481" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="565" parent="481" name="app">
       <DataType>varchar(255)|0s</DataType>
@@ -1727,13 +1704,11 @@ model</ColNames>
     </column>
     <index id="572" parent="482" name="sqlite_autoindex_django_session_1">
       <ColNames>session_key</ColNames>
-      <ColumnCollations></ColumnCollations>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
     <index id="573" parent="482" name="django_session_expire_date_a5c62663">
       <ColNames>expire_date</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="574" parent="482">
       <ColNames>session_key</ColNames>
@@ -1741,10 +1716,10 @@ model</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_django_session_1</UnderlyingIndexName>
     </key>
     <column id="575" parent="483" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="576" parent="483" name="name">
       <DataType>varchar(200)|0s</DataType>
@@ -1779,17 +1754,16 @@ model</ColNames>
     </foreign-key>
     <index id="582" parent="483" name="myapp_course_topic_id_84cc7cf1">
       <ColNames>topic_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="583" parent="483">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="584" parent="484" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="585" parent="484" name="level">
       <DataType>integer|0s</DataType>
@@ -1815,17 +1789,16 @@ model</ColNames>
     </foreign-key>
     <index id="589" parent="484" name="myapp_order_Student_id_6eaef8b8">
       <ColNames>Student_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="590" parent="484">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="591" parent="485" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="592" parent="485" name="order_id">
       <DataType>bigint|0s</DataType>
@@ -1854,17 +1827,13 @@ model</ColNames>
     <index id="596" parent="485" name="myapp_order_courses_order_id_course_id_2c0faf88_uniq">
       <ColNames>order_id
 course_id</ColNames>
-      <ColumnCollations>
-</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="597" parent="485" name="myapp_order_courses_order_id_dd4e4f74">
       <ColNames>order_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="598" parent="485" name="myapp_order_courses_course_id_a125fdaa">
       <ColNames>course_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="599" parent="485">
       <ColNames>id</ColNames>
@@ -1896,10 +1865,10 @@ course_id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="605" parent="487" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="606" parent="487" name="student_id">
       <DataType>integer|0s</DataType>
@@ -1928,27 +1897,23 @@ course_id</ColNames>
     <index id="610" parent="487" name="myapp_student_interested_in_student_id_topic_id_a9907c7b_uniq">
       <ColNames>student_id
 topic_id</ColNames>
-      <ColumnCollations>
-</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="611" parent="487" name="myapp_student_interested_in_student_id_88f48e49">
       <ColNames>student_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="612" parent="487" name="myapp_student_interested_in_topic_id_cb3f55a7">
       <ColNames>topic_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="613" parent="487">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="614" parent="488" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="615" parent="488" name="name">
       <DataType>varchar(200)|0s</DataType>

@@ -2,17 +2,21 @@ from django.db import models
 import datetime
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.core import serializers
 
 
 class Topic(models.Model):
     name = models.CharField(max_length=200)
     category = models.CharField(max_length=200, blank=True)
 
+    def toJson(self):
+      return serializers.serialize('json', [self])
+
     def __str__(self):
-        return "Name: " + str(self.name) + "\n Category:" + str(self.category) + "\n"
+      return f"ID: {str(self.id)} Name: " + str(self.name) + "\n Category:" + str(self.category) + "\n"
 
     def get_category(self):
-        return self.category
+      return self.category
 
 
 class Course(models.Model):
