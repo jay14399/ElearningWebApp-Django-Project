@@ -1,6 +1,8 @@
 from django.http import HttpResponse
+
+from myapp.forms import InterestForm, OrderForm
 from .models import Topic, Course, Student, Order
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.shortcuts import render
 
 
@@ -79,3 +81,44 @@ def details(request, id):
 def courses(request):
     courses_list = Course.objects.all().order_by("id")
     return render(request, 'myapp/courses.html', {'courses': courses_list})
+
+
+def place_order(request):
+    msg = ''
+    course_list = Course.objects.all()
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order = form.save(commit=False)
+            if order.levels <= order.course.stages:
+                order.save()
+                msg = 'Your course has been ordered successfully.'
+                if order.course.price > 150.00:
+                    order.course.discount()
+            else:
+                msg = 'You exceeded the number of levels for this course.'
+            return render(request, 'myapp/order_response.html', {'msg': msg})
+    else:
+        form = OrderForm()
+    return render(request, 'myapp/place_order.html', {'form': form, 'msg': msg, 'course_list': course_list})
+
+
+def course_detail(request, cour_id):
+    course = get_object_or_404(Course, pk=cour_id)
+    if request.method == 'POST':
+        form = InterestForm(request.POST)
+        # print(form.cleaned_data("interested"))
+        if form.is_valid():
+            # print(form.cleaned_data["interested"] == 1)
+            if form.cleaned_data["interested"] == "1":
+                course.interested = course.interested+1
+                course.save()
+                return redirect('/myapp/')
+            else:
+                return redirect('/myapp/')
+        else:
+            msg = 'There was an error in saving. Please try again'
+            return redirect(request, 'myapp/interest_response.html', {'msg': msg})
+    else:
+        form = InterestForm()
+        return render(request, 'myapp/course_detail.html', {'form': form, 'course': course})

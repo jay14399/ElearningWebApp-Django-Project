@@ -7,5 +7,16 @@ class InterestForm(forms.Form):
                (0, 'No')]
 
     interested = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
-    levels = forms.IntegerField(default=1, min_value=1)
-    comments = forms.CharField(widget=forms.Textarea, blank=True, label="Additional Comments")
+    levels = forms.IntegerField(min_value=1)
+    comments = forms.CharField(
+        widget=forms.Textarea, label="Additional Comments")
+
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ['Student', 'courses', 'level', 'order_date']
+        widgets = {
+            'student': forms.RadioSelect,
+            'order_date': forms.SelectDateWidget
+        }
